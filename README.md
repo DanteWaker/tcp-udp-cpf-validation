@@ -1,20 +1,20 @@
-# Sistema de Validação de CPF (TCP/UDP)
+# CPF Validation System (TCP/UDP)
 
-Este projeto implementa um sistema cliente-servidor para validação de CPF usando os protocolos TCP e UDP. Desenvolvido em TypeScript e Node.js, o sistema permite validar números de CPF enviados pelo cliente e receber respostas do servidor sobre a validade do documento.
+This project implements a client-server system for validating Brazilian CPF numbers using both TCP and UDP protocols. Developed in TypeScript and Node.js, the system allows clients to send CPF numbers and receive validation responses from the server.
 
-## Requisitos do Sistema
+## System Requirements
 
-- Node.js (versão 18.0.0 ou superior)
-- npm, yarn ou pnpm (gerenciadores de pacotes)
+- Node.js (version 18.0.0 or higher)
+- npm, yarn, or pnpm (package managers)
 
-## Instalação do Node.js
+## Node.js Installation
 
 ### Windows
 
-1. Acesse o site oficial do Node.js: https://nodejs.org/
-2. Baixe a versão LTS (Long Term Support)
-3. Execute o instalador e siga as instruções na tela
-4. Para verificar a instalação, abra o Prompt de Comando e digite:
+1. Visit the official Node.js website: https://nodejs.org/
+2. Download the LTS (Long Term Support) version
+3. Run the installer and follow the on-screen instructions
+4. To verify the installation, open Command Prompt and type:
    ```
    node --version
    npm --version
@@ -22,23 +22,23 @@ Este projeto implementa um sistema cliente-servidor para validação de CPF usan
 
 ### Linux (Ubuntu/Debian)
 
-1. Atualize os repositórios:
+1. Update repositories:
    ```bash
    sudo apt update
    ```
 
-2. Instale o Node.js e npm:
+2. Install Node.js and npm:
    ```bash
    sudo apt install nodejs npm
    ```
 
-3. Para versões mais recentes, use o NodeSource:
+3. For newer versions, use NodeSource:
    ```bash
    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
    sudo apt install -y nodejs
    ```
 
-4. Verifique a instalação:
+4. Verify installation:
    ```bash
    node --version
    npm --version
@@ -46,178 +46,219 @@ Este projeto implementa um sistema cliente-servidor para validação de CPF usan
 
 ### Linux (Fedora/CentOS/RHEL)
 
-1. Para Fedora:
+1. For Fedora:
    ```bash
    sudo dnf install nodejs
    ```
 
-2. Para CentOS/RHEL:
+2. For CentOS/RHEL:
    ```bash
    curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
    sudo yum install -y nodejs
    ```
 
-3. Verifique a instalação:
+3. Verify installation:
    ```bash
    node --version
    npm --version
    ```
 
-## Configuração do Projeto
+## Project Setup
 
-1. Clone ou baixe o repositório do projeto
+1. Clone or download the project repository
 
-2. Navegue até a pasta do projeto:
+2. Navigate to the project folder:
    ```bash
-   cd caminho/para/o/projeto
+   cd path/to/project
    ```
 
-3. Instale as dependências:
+3. Install dependencies:
 
-   **Usando npm:**
+   **Using npm:**
    ```bash
    npm install
    ```
 
-   **Usando yarn:**
+   **Using yarn:**
    ```bash
    yarn install
    ```
 
-   **Usando pnpm:**
+   **Using pnpm:**
    ```bash
    pnpm install
    ```
 
-4. Compile o projeto TypeScript:
+4. Compile the TypeScript project:
    ```bash
    npm run build
    ```
-   Isso criará a pasta `dist` com os arquivos JavaScript compilados.
+   This will create the `dist` folder with the compiled JavaScript files.
 
-## Executando a Aplicação
+## Running the Application
 
-### Modo de Desenvolvimento
+### Development Mode
 
-No modo de desenvolvimento, os arquivos TypeScript são executados diretamente usando ts-node.
+In development mode, TypeScript files are executed directly using ts-node.
 
-#### Servidor e Cliente TCP
+#### TCP Server and Client
 
-1. Em um terminal, inicie o servidor TCP:
+1. In one terminal, start the TCP server:
    ```bash
    npm run dev:tcp-server
    ```
 
-2. Em outro terminal, inicie o cliente TCP:
+2. In another terminal, start the TCP client:
    ```bash
    npm run dev:tcp-client
    ```
 
-#### Servidor e Cliente UDP
+#### UDP Server and Client
 
-1. Em um terminal, inicie o servidor UDP:
+1. In one terminal, start the UDP server:
    ```bash
    npm run dev:udp-server
    ```
 
-2. Em outro terminal, inicie o cliente UDP:
+2. In another terminal, start the UDP client:
    ```bash
    npm run dev:udp-client
    ```
 
-### Modo de Produção
+### Production Mode
 
-No modo de produção, os arquivos JavaScript compilados são executados.
+In production mode, the compiled JavaScript files are executed.
 
-#### Servidor e Cliente TCP
+#### TCP Server and Client
 
-1. Em um terminal, inicie o servidor TCP:
+1. In one terminal, start the TCP server:
    ```bash
    npm run tcp-server
    ```
 
-2. Em outro terminal, inicie o cliente TCP:
+2. In another terminal, start the TCP client:
    ```bash
    npm run tcp-client
    ```
 
-#### Servidor e Cliente UDP
+#### UDP Server and Client
 
-1. Em um terminal, inicie o servidor UDP:
+1. In one terminal, start the UDP server:
    ```bash
    npm run udp-server
    ```
 
-2. Em outro terminal, inicie o cliente UDP:
+2. In another terminal, start the UDP client:
    ```bash
    npm run udp-client
    ```
 
-## Utilizando a Aplicação
+## Using the Application
 
-1. Após iniciar o cliente (TCP ou UDP), você verá um prompt solicitando um CPF:
+1. After starting the client (TCP or UDP), you will see a prompt asking for a CPF:
    ```
-   Digite um CPF para validar (ou "sair" para encerrar):
-   ```
-
-2. Digite um CPF (com ou sem pontuação) e pressione Enter:
-   ```
-   Digite um CPF para validar (ou "sair" para encerrar): 123.456.789-09
+   Enter a CPF to validate (or "exit" to quit):
    ```
 
-3. O servidor validará o CPF e enviará uma resposta que será exibida no cliente:
+2. Type a CPF (with or without punctuation) and press Enter:
    ```
-   Resposta do servidor: CPF inválido (primeiro dígito verificador)
-   ```
-
-4. Para encerrar o cliente, digite "sair" quando solicitado:
-   ```
-   Digite um CPF para validar (ou "sair" para encerrar): sair
+   Enter a CPF to validate (or "exit" to quit): 123.456.789-09
    ```
 
-## Diferenças entre TCP e UDP
+3. The server will validate the CPF and send a response that will be displayed on the client:
+   ```
+   Server response: Invalid CPF (first verification digit)
+   ```
 
-- **TCP (Transmission Control Protocol)**: Protocolo orientado à conexão que garante a entrega e a ordem dos pacotes. Estabelece uma conexão persistente entre cliente e servidor.
+4. To exit the client, type "exit" when prompted:
+   ```
+   Enter a CPF to validate (or "exit" to quit): exit
+   ```
 
-- **UDP (User Datagram Protocol)**: Protocolo não orientado à conexão que não garante a entrega ou ordem dos pacotes. Cada mensagem é enviada independentemente.
+## Differences Between TCP and UDP
 
-## Solução de Problemas
+- **TCP (Transmission Control Protocol)**: Connection-oriented protocol that guarantees delivery and order of packets. Establishes a persistent connection between client and server.
 
-### Portas em uso
+- **UDP (User Datagram Protocol)**: Connectionless protocol that does not guarantee delivery or order of packets. Each message is sent independently.
 
-Se você receber um erro indicando que a porta já está em uso:
+## Troubleshooting
 
-1. Encerre o processo que está usando a porta:
+### Ports in Use
+
+If you receive an error indicating that the port is already in use:
+
+1. Terminate the process using the port:
    
    **Windows:**
    ```
    netstat -ano | findstr :3000
-   taskkill /PID [PID_DO_PROCESSO] /F
+   taskkill /PID [PROCESS_PID] /F
    ```
 
    **Linux:**
    ```bash
    sudo lsof -i :3000
-   sudo kill -9 [PID_DO_PROCESSO]
+   sudo kill -9 [PROCESS_PID]
    ```
 
-2. Ou altere as portas no código:
-   - TCP: Porta 3000 (em `tcp-server.ts` e `tcp-client.ts`)
-   - UDP: Porta 3001 (em `udp-server.ts` e `udp-client.ts`)
+2. Or change the ports in the code:
+   - TCP: Port 3000 (in `tcp-server.ts` and `tcp-client.ts`)
+   - UDP: Port 3001 (in `udp-server.ts` and `udp-client.ts`)
 
-### Erros de TypeScript
+### TypeScript Errors
 
-Se você encontrar erros de compilação TypeScript:
+If you encounter TypeScript compilation errors:
 
-1. Verifique se todas as dependências estão instaladas:
+1. Verify that all dependencies are installed:
    ```bash
    npm install
    ```
 
-2. Limpe a pasta de build e recompile:
+2. Clean the build folder and recompile:
    ```bash
    rm -rf dist
    npm run build
    ```
 
-## Estrutura do Projeto 
+## Project Structure
+
+```
+project/
+├── package.json         # Project configuration and scripts
+├── tsconfig.json        # TypeScript configuration
+├── .gitignore           # Files ignored by Git
+├── src/                 # Source code
+│   ├── cpf-validator.ts # CPF validation logic
+│   ├── tcp-server.ts    # TCP server
+│   ├── tcp-client.ts    # TCP client
+│   ├── udp-server.ts    # UDP server
+│   └── udp-client.ts    # UDP client
+└── dist/                # Compiled code (generated)
+```
+
+## CPF Validation Algorithm
+
+The system uses the official Brazilian algorithm for CPF validation, which includes:
+
+1. Format verification (11 digits)
+2. Repeated digits verification (invalid)
+3. Calculation and validation of the two verification digits
+
+## Technologies Used
+
+- TypeScript
+- Node.js (ESM - ECMAScript Modules)
+- Native Node.js modules (net, dgram)
+
+## License
+
+This project is licensed under the terms of the Non-Commercial Attribution License.
+
+You can:
+- Use, copy, and modify the code for non-commercial purposes
+- Distribute the code, as long as you maintain attribution to the original author
+
+You cannot:
+- Use this code for commercial purposes without explicit permission
+
+For more details, see the LICENSE.md file. 
