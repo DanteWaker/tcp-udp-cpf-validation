@@ -97,38 +97,6 @@ This project implements a client-server system for validating Brazilian CPF numb
 
 ## Running the Application
 
-### Development Mode
-
-In development mode, TypeScript files are executed directly using ts-node.
-
-#### TCP Server and Client
-
-1. In one terminal, start the TCP server:
-   ```bash
-   npm run dev:tcp-server
-   ```
-
-2. In another terminal, start the TCP client:
-   ```bash
-   npm run dev:tcp-client
-   ```
-
-#### UDP Server and Client
-
-1. In one terminal, start the UDP server:
-   ```bash
-   npm run dev:udp-server
-   ```
-
-2. In another terminal, start the UDP client:
-   ```bash
-   npm run dev:udp-client
-   ```
-
-### Production Mode
-
-In production mode, the compiled JavaScript files are executed.
-
 #### TCP Server and Client
 
 1. In one terminal, start the TCP server:
